@@ -1,12 +1,12 @@
 {
-    "sections": {
-      "product-details": {
-        "type": "product-details"
-      },
-      "customer-reviews": {
-        "type": "customer-reviews"
-      }
+  "sections": {
+    "product-details": {
+      "type": "product-details"
     },
-    "order": ["product-details", "customer-reviews"]
-  }
-  
+    "customer-reviews": {
+      "type": "customer-reviews"
+    }
+  },
+  "order": ["product-details", "customer-reviews"]
+}
+ 
