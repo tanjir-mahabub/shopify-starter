@@ -4,7 +4,13 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Welcome to Md Tanjir Store</title>
+  <title>
+    {{ page_title }}
+  </title>
+  {% if page_description -%}
+  <meta name="description" content="{{ page_description | truncate: 150 }}">
+  {%- endif %}
+
   {{ content_for_header }}
 
   <link rel="stylesheet" href="{{ 'theme.css' | asset_url }}">

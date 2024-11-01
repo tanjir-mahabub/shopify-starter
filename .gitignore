@@ -1,6 +1,10 @@
 # Node.js dependencies
 node_modules/
 
+# Shopify theme kit access key
+config.yml
+
+
 # Build and output directories
 dist/
 build/
