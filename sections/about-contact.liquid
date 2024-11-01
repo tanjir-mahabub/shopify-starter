@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 <section class="about-contact">
     <h2>About Us</h2>
     <p>{{ section.settings.about_text }}</p>
@@ -28,4 +29,36 @@
 }
 ]
 }
+=======
+<section class="about-contact">
+    <h2>About Us</h2>
+    <p>{{ section.settings.about_text }}</p>
+
+    <h2>Contact Us</h2>
+    <p>Email: {{ section.settings.contact_email }}</p>
+    <p>Phone: {{ section.settings.contact_phone }}</p>
+</section>
+
+{% schema %}
+{
+"name": "About & Contact",
+"settings": [
+{
+"type": "textarea",
+"id": "about_text",
+"label": "About Us Text"
+},
+{
+"type": "text",
+"id": "contact_email",
+"label": "Contact Email"
+},
+{
+"type": "text",
+"id": "contact_phone",
+"label": "Contact Phone"
+}
+]
+}
+>>>>>>> 312b58bfb81074af3a2a25aa699c0e5778707828
 {% endschema %}
