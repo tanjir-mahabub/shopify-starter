@@ -1,0 +1,44 @@
+<!-- sections/banner.liquid -->
+<section class="banner">
+    <div class="banner__image"
+        style="background-image: url({{ section.settings.banner_image | img_url: '1600x600' }});">
+        <div class="banner__content">
+            <h1>{{ section.settings.banner_title }}</h1>
+            <p>{{ section.settings.banner_subtitle }}</p>
+            <a href="{{ section.settings.button_link }}" class="btn">{{ section.settings.button_text }}</a>
+        </div>
+    </div>
+</section>
+
+{% schema %}
+{
+"name": "Banner",
+"settings": [
+{
+"type": "image_picker",
+"id": "banner_image",
+"label": "Banner Image"
+},
+{
+"type": "text",
+"id": "banner_title",
+"label": "Banner Title"
+},
+{
+"type": "textarea",
+"id": "banner_subtitle",
+"label": "Banner Subtitle"
+},
+{
+"type": "url",
+"id": "button_link",
+"label": "Button Link"
+},
+{
+"type": "text",
+"id": "button_text",
+"label": "Button Text"
+}
+]
+}
+{% endschema %}
