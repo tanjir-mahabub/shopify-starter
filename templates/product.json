@@ -1,0 +1,12 @@
+{
+    "sections": {
+      "product-details": {
+        "type": "product-details"
+      },
+      "customer-reviews": {
+        "type": "customer-reviews"
+      }
+    },
+    "order": ["product-details", "customer-reviews"]
+  }
+  

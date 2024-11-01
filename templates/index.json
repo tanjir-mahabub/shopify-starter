@@ -1,11 +1,25 @@
 {
     "sections": {
-        "main": {
-            "type": "main-index",
-            "settings": {}
+      "banner": {
+        "type": "banner",
+        "settings": {
+          "image": "banner-image.jpg",
+          "text": "Welcome to Our Store!"
         }
+      },
+      "featured-products": {
+        "type": "featured-products",
+        "settings": {
+          "title": "Featured Products"
+        }
+      },
+      "promotional-section": {
+        "type": "promotional-section",
+        "settings": {
+          "text": "Check out our latest offers!"
+        }
+      }
     },
-    "order": [
-        "main"
-    ]
-}
+    "order": ["banner", "featured-products", "promotional-section"]
+  }
+  

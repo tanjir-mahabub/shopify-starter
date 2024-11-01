@@ -1,0 +1,12 @@
+{
+    "sections": {
+      "contact-info": {
+        "type": "contact-info",
+        "settings": {
+          "text": "Contact us at example@example.com"
+        }
+      }
+    },
+    "order": ["contact-info"]
+  }
+  
