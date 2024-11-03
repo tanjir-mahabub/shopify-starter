@@ -1,6 +1,6 @@
 {% if settings.show_featured_products %}
   <div style="background-color: {{ section.settings.section_background_color }}; padding: 20px;">
-    <div class="container flex flex-col justify-center">
+    <div class="container mx-auto">
        <div class="mt-3 mb-7">
          <h2 class="font-bold" style="font-size: {{ section.settings.title_font_size }}px; text-align: {{ section.settings.title_alignment }};">
       {{ section.settings.section_title }}
@@ -46,26 +46,17 @@
       "max": 48,
       "step": 1,
       "default": 32
-    },
+    },    
     {
-      "type": "radio",
+      "type": "select",
       "id": "title_alignment",
       "label": "Title Alignment",
-      "default": "left",
       "options": [
-        {
-          "value": "left",
-          "label": "Left"
-        },
-        {
-          "value": "center",
-          "label": "Center"
-        },
-        {
-          "value": "right",
-          "label": "Right"
-        }
-      ]
+        { "value": "left", "label": "Left" },
+        { "value": "center", "label": "Center" },
+        { "value": "right", "label": "Right" }
+      ],
+      "default": "center"
     },
     {
       "type": "text",

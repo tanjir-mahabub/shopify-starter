@@ -22,12 +22,16 @@
     },
     "featured-products": {
       "type": "featured-products",
-      "settings": {
-      }
+      "settings": {}
+    },
+    "promotional-section": {
+      "type": "promotional-section",
+      "settings": {}
     }
   },
   "order": [
     "banner",
-    "featured-products"
+    "featured-products",
+    "promotional-section"
   ]
 }

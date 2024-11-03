@@ -6,13 +6,13 @@
         "type": "color",
         "id": "primary_color",
         "label": "Primary Color",
-        "default": "#ff6600"
+        "default": "#000"
       },
       {
         "type": "color",
         "id": "secondary_color",
         "label": "Secondary Color",
-        "default": "#0066ff"
+        "default": "#000"
       },
       {
         "type": "font_picker",
@@ -37,12 +37,18 @@
         "label": "Show Banner",
         "default": true
       },
-     {
-       "type": "checkbox",
-       "id": "show_featured_products",
-       "label": "Show Featured Products",
-       "default": true
-     }
+      {
+        "type": "checkbox",
+        "id": "show_featured_products",
+        "label": "Show Featured Products",
+        "default": true
+      },
+      {
+        "type": "checkbox",
+        "id": "show_promo_section",
+        "label": "Show Promotional Section",
+        "default": true
+      }
     ]
   }
 ]
