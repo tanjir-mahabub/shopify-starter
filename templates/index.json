@@ -45,17 +45,18 @@
       "settings": {
         "show_promo_section": true,
         "heading": "Special Offer",
-        "heading_font_size": 32,
-        "heading_color": "#333333",
+        "heading_font_size": 48,
+        "heading_color": "#ffffff",
         "text": "Get the best deals on our products!",
-        "text_font_size": 16,
-        "text_color": "#555555",
+        "text_font_size": 18,
+        "text_color": "#ffffff",
+        "image": "shopify://shop_images/pexels-max-fischer-5872364.jpg",
         "button_text": "Shop Now",
         "button_link": "shopify://collections/all",
         "button_font_size": 16,
         "button_text_color": "#ffffff",
         "button_bg_color": "#0073e6",
-        "background_color": "#f9f9f9",
+        "background_color": "#a60b6c",
         "text_alignment": "center"
       }
     }
