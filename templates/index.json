@@ -14,19 +14,50 @@
       "settings": {
         "background_image": "shopify://shop_images/beauty-products-and-flower.jpg",
         "min_height": 650,
+        "bg_opacity": 60,
         "heading": "Hello there",
+        "heading_font_size": 36,
+        "heading_color": "#ffffff",
         "text": "Welcome to my shop",
+        "text_font_size": 16,
+        "text_color": "#ffffff",
         "button_text": "Get Started",
+        "button_font_size": 16,
+        "button_text_color": "#ffffff",
         "button_link": "/"
       }
     },
     "featured-products": {
       "type": "featured-products",
-      "settings": {}
+      "settings": {
+        "section_background_color": "#f9f9f9",
+        "title_font_size": 32,
+        "title_alignment": "center",
+        "section_title": "Featured Products",
+        "featured_collection": "matt",
+        "buy_button_text": "Buy Now",
+        "product_limit": 6,
+        "card_background_color": "#ffffff"
+      }
     },
     "promotional-section": {
       "type": "promotional-section",
-      "settings": {}
+      "settings": {
+        "show_promo_section": true,
+        "heading": "Special Offer",
+        "heading_font_size": 32,
+        "heading_color": "#333333",
+        "text": "Get the best deals on our products!",
+        "text_font_size": 16,
+        "text_color": "#555555",
+        "button_text": "Shop Now",
+        "button_link": "shopify://collections/all",
+        "button_font_size": 16,
+        "button_text_color": "#ffffff",
+        "button_bg_color": "#0073e6",
+        "background_color": "#f9f9f9",
+        "text_alignment": "center"
+      }
     }
   },
   "order": [
