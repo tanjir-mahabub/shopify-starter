@@ -1,16 +1,33 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
 {
-    "sections": {
-        "banner": {
-            "type": "banner",
-            "settings": {}
-        },
-        "featured-products": {
-            "type": "featured-products",
-            "settings": {}
-        }
+  "sections": {
+    "banner": {
+      "type": "banner",
+      "settings": {
+        "background_image": "shopify://shop_images/beauty-products-and-flower.jpg",
+        "min_height": 650,
+        "heading": "Hello there",
+        "text": "Welcome to my shop",
+        "button_text": "Get Started",
+        "button_link": "/"
+      }
     },
-    "order": [
-        "banner",
-        "featured-products"
-    ]
+    "featured-products": {
+      "type": "featured-products",
+      "settings": {
+      }
+    }
+  },
+  "order": [
+    "banner",
+    "featured-products"
+  ]
 }

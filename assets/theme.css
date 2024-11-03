@@ -2127,10 +2127,6 @@ html {
   height: 1.25rem;
 }
 
-.min-h-\[650px\] {
-  min-height: 650px;
-}
-
 .w-10 {
   width: 2.5rem;
 }
@@ -2159,24 +2155,12 @@ html {
   flex: none;
 }
 
-.grid-flow-col {
-  grid-auto-flow: column;
-}
-
-.items-center {
-  align-items: center;
-}
-
 .justify-end {
   justify-content: flex-end;
 }
 
 .justify-between {
   justify-content: space-between;
-}
-
-.gap-4 {
-  gap: 1rem;
 }
 
 .truncate {
@@ -2272,14 +2256,4 @@ html {
 body {
   margin: 0;
   padding: 0;
-}
-
-@media (min-width: 768px) {
-  .md\:place-self-center {
-    place-self: center;
-  }
-
-  .md\:justify-self-end {
-    justify-self: end;
-  }
 }
