@@ -1,0 +1,13 @@
+<div class="card w-96 shadow-xl" style="background-color: {{ section.settings.card_background_color }};">
+  <figure>
+    <img src="{{ product.featured_image | img_url: 'medium' }}" alt="{{ product.title }}" />
+  </figure>
+  <div class="card-body">
+    <div class="badge badge-primary mb-2">{{ product.collections[0].title }}</div>
+    <h2 class="card-title">{{ product.title }}</h2>
+    <p>{{ product.description | truncatewords: 20 }}</p>
+    <div class="card-actions justify-end">
+      <a href="{{ product.url }}" class="btn btn-primary">{{ section.settings.buy_button_text }}</a>
+    </div>
+  </div>
+</div>

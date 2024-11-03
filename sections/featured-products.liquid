@@ -1,15 +1,101 @@
-<h2>Featured Products</h2>
+{% if settings.show_featured_products %}
+  <div style="background-color: {{ section.settings.section_background_color }}; padding: 20px;">
+    <div class="container mx-auto">
+       <div class="mt-3 mb-7">
+         <h2 class="font-bold" style="font-size: {{ section.settings.title_font_size }}px; text-align: {{ section.settings.title_alignment }};">
+      {{ section.settings.section_title }}
+    </h2>
+       </div>
 
+        <div class="flex flex-wrap justify-center gap-4">
+        {% assign featured_collection = collections[section.settings.featured_collection] %}
+        {% assign product_limit = section.settings.product_limit %}
+        {% assign featured_products = featured_collection.products %}   
 
-<div class="card bg-base-100 w-96 shadow-xl">
-    <figure>
-        <img src="https://img.daisyui.com/images/stock/photo-1606107557195-0e29a4b5b4aa.webp" alt="Shoes" />
-    </figure>
-    <div class="card-body">
-        <h2 class="card-title">Shoes!</h2>
-        <p>If a dog chews shoes whose shoes does he choose?</p>
-        <div class="card-actions justify-end">
-            <button class="btn btn-primary">Buy Now</button>
+        {% if featured_products.size > 0 %}
+            {% for product in featured_products limit: product_limit %}
+            {% include 'product-card' %}
+            {% endfor %}
+        {% else %}
+            <p>No featured products found in this collection.</p>
+        {% endif %}
         </div>
     </div>
-</div>
+  </div>
+{% else %}
+  <p>Featured products section is disabled.</p>
+{% endif %}
+
+
+
+{% schema %}
+{
+  "name": "Featured Products",
+  "settings": [
+    {
+      "type": "color",
+      "id": "section_background_color",
+      "label": "Section Background Color",
+      "default": "#f9f9f9"
+    },
+    {
+      "type": "range",
+      "id": "title_font_size",
+      "label": "Title Font Size (px)",
+      "min": 16,
+      "max": 48,
+      "step": 1,
+      "default": 32
+    },    
+    {
+      "type": "select",
+      "id": "title_alignment",
+      "label": "Title Alignment",
+      "options": [
+        { "value": "left", "label": "Left" },
+        { "value": "center", "label": "Center" },
+        { "value": "right", "label": "Right" }
+      ],
+      "default": "center"
+    },
+    {
+      "type": "text",
+      "id": "section_title",
+      "label": "Section Title",
+      "default": "Featured Products"
+    },
+    {
+      "type": "collection",
+      "id": "featured_collection",
+      "label": "Select a Collection"
+    },
+    {
+      "type": "text",
+      "id": "buy_button_text",
+      "label": "Buy Button Text",
+      "default": "Buy Now"
+    },
+    {
+      "type": "range",
+      "id": "product_limit",
+      "label": "Number of Products to Display",
+      "min": 1,
+      "max": 12,
+      "step": 1,
+      "default": 6
+    },
+     {
+      "type": "color",
+      "id": "card_background_color",
+      "label": "Card Background Color",
+      "default": "#ffffff"
+    }
+  ],
+  "presets": [
+    {
+      "name": "Featured Products",
+      "category": "Custom"
+    }
+  ]
+}
+{% endschema %}

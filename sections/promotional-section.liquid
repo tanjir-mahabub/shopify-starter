@@ -1,0 +1,154 @@
+{% if settings.show_promo_section %}
+  <div class="promo-section py-12" 
+       style="background-color: {{ section.settings.background_color }}; text-align: {{ section.settings.text_alignment }};">
+    
+    <div class="container mx-auto max-w-4xl px-4 text-center">
+      
+      <h2 class="mb-4 font-bold" 
+          style="font-size: {{ section.settings.heading_font_size }}px; color: {{ section.settings.heading_color }};">
+        {{ section.settings.heading }}
+      </h2>
+      
+      <p class="mb-6" 
+         style="font-size: {{ section.settings.text_font_size }}px; color: {{ section.settings.text_color }};">
+        {{ section.settings.text }}
+      </p>
+      
+      {% if section.settings.image %}
+        <div class="mb-6">
+          <img src="{{ section.settings.image | image_url }}" 
+               alt="{{ section.settings.heading }}" 
+               class="mx-auto max-w-full rounded-lg">
+        </div>
+      {% endif %}
+      
+      {% if section.settings.button_text %}
+        <a href="{{ section.settings.button_link }}" 
+           class="btn" 
+           style="font-size: {{ section.settings.button_font_size }}px; 
+                  color: {{ section.settings.button_text_color }};
+                  background-color: {{ section.settings.button_bg_color }};">
+          {{ section.settings.button_text }}
+        </a>
+      {% endif %}
+    
+    </div>
+  </div>
+{% endif %}
+
+{% schema %}
+{
+  "name": "Promotional Section",
+  "settings": [
+    {
+      "type": "checkbox",
+      "id": "show_promo_section",
+      "label": "Show Promotional Section",
+      "default": true
+    },
+    {
+      "type": "text",
+      "id": "heading",
+      "label": "Heading",
+      "default": "Special Offer"
+    },
+    {
+      "type": "range",
+      "id": "heading_font_size",
+      "label": "Heading Font Size (px)",
+      "min": 16,
+      "max": 72,
+      "step": 2,
+      "default": 32
+    },
+    {
+      "type": "color",
+      "id": "heading_color",
+      "label": "Heading Color",
+      "default": "#333333"
+    },
+    {
+      "type": "textarea",
+      "id": "text",
+      "label": "Text",
+      "default": "Get the best deals on our products!"
+    },
+    {
+      "type": "range",
+      "id": "text_font_size",
+      "label": "Text Font Size (px)",
+      "min": 12,
+      "max": 36,
+      "step": 2,
+      "default": 16
+    },
+    {
+      "type": "color",
+      "id": "text_color",
+      "label": "Text Color",
+      "default": "#555555"
+    },
+    {
+      "type": "image_picker",
+      "id": "image",
+      "label": "Promotional Image"
+    },
+    {
+      "type": "text",
+      "id": "button_text",
+      "label": "Button Text",
+      "default": "Shop Now"
+    },
+    {
+      "type": "url",
+      "id": "button_link",
+      "label": "Button Link",
+      "default": "/collections/all"
+    },
+    {
+      "type": "range",
+      "id": "button_font_size",
+      "label": "Button Font Size (px)",
+      "min": 12,
+      "max": 24,
+      "step": 1,
+      "default": 16
+    },
+    {
+      "type": "color",
+      "id": "button_text_color",
+      "label": "Button Text Color",
+      "default": "#ffffff"
+    },
+    {
+      "type": "color",
+      "id": "button_bg_color",
+      "label": "Button Background Color",
+      "default": "#0073e6"
+    },
+    {
+      "type": "color",
+      "id": "background_color",
+      "label": "Background Color",
+      "default": "#f9f9f9"
+    },
+    {
+      "type": "select",
+      "id": "text_alignment",
+      "label": "Text Alignment",
+      "options": [
+        { "value": "left", "label": "Left" },
+        { "value": "center", "label": "Center" },
+        { "value": "right", "label": "Right" }
+      ],
+      "default": "center"
+    }
+  ],
+  "presets": [
+    {
+      "name": "Promotional Section",
+      "category": "Custom"
+    }
+  ]
+}
+{% endschema %}

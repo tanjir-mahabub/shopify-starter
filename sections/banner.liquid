@@ -1,57 +1,119 @@
-<div class="hero"
-  style="min-height: {{ section.settings.min_height | default: 650 }}px; background-image: url({{ section.settings.background_image | image_url | default: 'https://img.daisyui.com/images/stock/photo-1507358522600-9f71e620c44e.webp' }});">
-  <div class="hero-overlay bg-opacity-60"></div>
-  <div class="hero-content text-neutral-content text-center">
-    <div class="max-w-md">
-      <h1 class="mb-5 text-5xl font-bold">{{ section.settings.heading }}</h1>
-      <p class="mb-5">{{ section.settings.text }}</p>
-      <a href="{{ section.settings.button_link }}" class="btn btn-primary">{{ section.settings.button_text }}</a>
+{% style %}
+  .hero-bg-opacity {
+    --tw-bg-opacity: {{ section.settings.bg_opacity | times: 0.01 }};
+  }
+{% endstyle %}
+
+{% if settings.show_banner %}
+  <div class="hero"
+       style="min-height: {{ section.settings.min_height | default: 650 }}px; background-image: url({{ section.settings.background_image | image_url | default: 'https://img.daisyui.com/images/stock/photo-1507358522600-9f71e620c44e.webp' }});">
+    <div class="hero-overlay hero-bg-opacity"></div>
+    <div class="hero-content text-neutral-content text-center">
+      <div class="max-w-md">
+        <h1 class="mb-5 font-bold" style="font-size: {{ section.settings.heading_font_size }}px; color: {{ section.settings.heading_color }}">{{ section.settings.heading }}</h1>
+        <p class="mb-5" style="font-size: {{ section.settings.text_font_size }}px; color: {{ section.settings.text_color }}">{{ section.settings.text }}</p>
+        <a href="{{ section.settings.button_link }}" class="btn btn-primary" style="font-size: {{ section.settings.button_font_size }}px; color: {{ section.settings.button_text_color }}">{{ section.settings.button_text }}</a>
+      </div>
     </div>
   </div>
-</div>
+{% endif %}
 
 {% schema %}
 {
-"name": "Banner",
-"settings": [
-{
-"type": "image_picker",
-"id": "background_image",
-"label": "Background Image"
-},
-{
-"type": "range",
-"id": "min_height",
-"label": "Minimum Height (px)",
-"min": 400,
-"max": 1000,
-"step": 50,
-"default": 650
-},
-{
-"type": "text",
-"id": "heading",
-"label": "Heading",
-"default": "Hello there"
-},
-{
-"type": "textarea",
-"id": "text",
-"label": "Text",
-"default": "Welcome to my shop"
-},
-{
-"type": "text",
-"id": "button_text",
-"label": "Button Text",
-"default": "Get Started"
-},
-{
-"type": "url",
-"id": "button_link",
-"label": "Button Link",
-"default": "/"
-}
-]
+  "name": "Banner",
+  "settings": [
+    {
+      "type": "image_picker",
+      "id": "background_image",
+      "label": "Background Image"
+    },
+    {
+      "type": "range",
+      "id": "min_height",
+      "label": "Minimum Height (px)",
+      "min": 400,
+      "max": 1000,
+      "step": 50,
+      "default": 650
+    },
+    {
+      "type": "range",
+      "id": "bg_opacity",
+      "label": "Background Opacity",
+      "min": 0,
+      "max": 100,
+      "step": 10,
+      "default": 60
+    },
+    {
+      "type": "text",
+      "id": "heading",
+      "label": "Heading",
+      "default": "Hello there"
+    },
+    {
+      "type": "range",
+      "id": "heading_font_size",
+      "label": "Heading Font Size (px)",
+      "min": 16,
+      "max": 72,
+      "step": 2,
+      "default": 36
+    },
+    {
+      "type": "color",
+      "id": "heading_color",
+      "label": "Heading Color",
+      "default": "#ffffff"
+    },
+    {
+      "type": "textarea",
+      "id": "text",
+      "label": "Text",
+      "default": "Welcome to my shop"
+    },
+    {
+      "type": "range",
+      "id": "text_font_size",
+      "label": "Text Font Size (px)",
+      "min": 12,
+      "max": 36,
+      "step": 2,
+      "default": 16
+    },
+    {
+      "type": "color",
+      "id": "text_color",
+      "label": "Text Color",
+      "default": "#ffffff"
+    },
+    {
+      "type": "text",
+      "id": "button_text",
+      "label": "Button Text",
+      "default": "Get Started"
+    },
+    {
+      "type": "range",
+      "id": "button_font_size",
+      "label": "Button Font Size (px)",
+      "min": 12,
+      "max": 24,
+      "step": 1,
+      "default": 16
+    },
+    {
+      "type": "color",
+      "id": "button_text_color",
+      "label": "Button Text Color",
+      "default": "#ffffff"
+    },
+    {
+      "type": "url",
+      "id": "button_link",
+      "label": "Button Link",
+      "default": "/"
+    }
+  ]
 }
 {% endschema %}
