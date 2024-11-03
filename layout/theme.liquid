@@ -12,6 +12,21 @@
   {%- endif %}
 
   {{ content_for_header }}
+  
+<style>
+  body {
+    font-family: {{ settings.body_font.family }};
+    color: {{ settings.primary_color }};
+  }
+
+  h1, h2, h3 {
+    font-family: {{ settings.heading_font.family }};
+    color: {{ settings.secondary_color }};
+  }
+
+  /* Additional styles for other elements */
+</style>
+
 
   <link rel="stylesheet" href="{{ 'theme.css' | asset_url }}">
 

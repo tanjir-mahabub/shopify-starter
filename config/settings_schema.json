@@ -1,3 +1,48 @@
 [
-
+  {
+    "name": "Typography",
+    "settings": [
+      {
+        "type": "color",
+        "id": "primary_color",
+        "label": "Primary Color",
+        "default": "#ff6600"
+      },
+      {
+        "type": "color",
+        "id": "secondary_color",
+        "label": "Secondary Color",
+        "default": "#0066ff"
+      },
+      {
+        "type": "font_picker",
+        "id": "heading_font",
+        "label": "Heading font",
+        "default": "helvetica_n4"
+        },
+      {
+        "type": "font_picker",
+        "id": "body_font",
+        "label": "Body Font",
+        "default": "roboto_n4"
+      }
+    ]
+  },
+  {
+    "name": "Layout Options",
+    "settings": [
+      {
+        "type": "checkbox",
+        "id": "show_banner",
+        "label": "Show Banner",
+        "default": true
+      },
+     {
+       "type": "checkbox",
+       "id": "show_featured_products",
+       "label": "Show Featured Products",
+       "default": true
+     }
+    ]
+  }
 ]

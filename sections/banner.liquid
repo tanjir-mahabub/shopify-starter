@@ -1,6 +1,12 @@
+{% style %}
+  .hero-bg-opacity {
+    --tw-bg-opacity: {{ section.settings.bg_opacity | times: 0.01 }};
+}
+{% endstyle %}
+
 <div class="hero"
   style="min-height: {{ section.settings.min_height | default: 650 }}px; background-image: url({{ section.settings.background_image | image_url | default: 'https://img.daisyui.com/images/stock/photo-1507358522600-9f71e620c44e.webp' }});">
-  <div class="hero-overlay bg-opacity-60"></div>
+  <div class="hero-overlay hero-bg-opacity"></div>
   <div class="hero-content text-neutral-content text-center">
     <div class="max-w-md">
       <h1 class="mb-5 text-5xl font-bold">{{ section.settings.heading }}</h1>
@@ -27,6 +33,15 @@
 "max": 1000,
 "step": 50,
 "default": 650
+},
+{
+"type": "range",
+"id": "bg_opacity",
+"label": "Background Opacity",
+"min": 0,
+"max": 100,
+"step": 10,
+"default": 60
 },
 {
 "type": "text",
